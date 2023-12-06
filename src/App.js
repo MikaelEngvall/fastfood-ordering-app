@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './App.css'; 
+import './App.css';
 
 const MENU_ITEMS = [
-  { id: 1, name: 'Burger', price: 60  },
+  { id: 1, name: 'Burger', price: 60 },
   { id: 2, name: 'Fries', price: 25 },
   { id: 3, name: 'Drink', price: 20 },
 ];
@@ -29,8 +29,11 @@ const App = () => {
   };
 
   const removeItem = (itemId) => {
-    const updatedOrder = order.filter((item) => item.id !== itemId);
-    setOrder(updatedOrder);
+    const updatedOrder = order.map((item) =>
+      item.id === itemId ? { ...item, quantity: Math.max(item.quantity - 1, 0) } : item
+    );
+
+    setOrder(updatedOrder.filter((item) => item.quantity > 0));
   };
 
   const calculateTotal = () => {
@@ -45,25 +48,51 @@ const App = () => {
       </header>
       <section className="menu">
         <h2>Menu</h2>
-        <ul>
-          {MENU_ITEMS.map((menuItem) => (
-            <li key={menuItem.id}>
-              {menuItem.name} - {menuItem.price.toFixed(2)}{' '}kr{' '}
-              <button onClick={() => addToOrder(menuItem)}>Add to Order</button>
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {MENU_ITEMS.map((menuItem) => (
+              <tr key={menuItem.id}>
+                <td>{menuItem.name}</td>
+                <td>{menuItem.price.toFixed(2)} kr</td>
+                <td>
+                  <button onClick={() => addToOrder(menuItem)}>Add to Order</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
       <section className="order">
         <h2>Your Order</h2>
-        <ul>
-          {order.map((item) => (
-            <li key={item.id}>
-              {item.name} x {item.quantity} - {item.price.toFixed(2)}{' '}kr{' '}
-              <button onClick={() => removeItem(item.id)}>Remove</button>
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {order.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.price.toFixed(2)} kr</td>
+                <td>{item.quantity}</td>
+                <td>
+                  <button onClick={() => removeItem(item.id)}>Remove</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         <p>Total: {calculateTotal()} kr</p>
       </section>
     </div>

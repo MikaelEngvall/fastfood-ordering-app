@@ -1,75 +1,63 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
-
 body {
   font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
 }
 
 .app {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.light {
-  color: #333;
-}
-
-.dark {
-  color: #fff;
-  background-color: #333;
 }
 
 header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 
-h1 {
-  margin: 0;
-  color: #007bff;
+.menu h2, .order h2 {
+  color: #333;
 }
 
-button {
+.menu table, .order table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.menu th, .menu td, .order th, .order td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.menu th, .order th {
+  background-color: #f2f2f2;
+}
+
+.menu button, .order button {
+  padding: 0.3rem 0.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
   cursor: pointer;
 }
 
-section {
-  margin-bottom: 20px;
+.menu button:hover, .order button:hover {
+  background-color: #555;
 }
 
-h2 {
-  margin-bottom: 10px;
-  color: #28a745;
-}
-
-ul {
-  list-style-type: none;
+.order ul {
+  list-style: none;
   padding: 0;
 }
 
-li {
-  margin-bottom: 10px;
+.order li {
+  margin-bottom: 0.5rem;
 }
 
-li button {
-  cursor: pointer;
-  background-color: #ffc107;
-  color: #212529;
-  border: none;
-}
-
-li button:hover {
-  background-color: #ffca2b;
-}
-
-p {
-  font-weight: bold;
-  color: #dc3545;
+.order li button {
+  background-color: #dc3545;
+  color: white;
 }
