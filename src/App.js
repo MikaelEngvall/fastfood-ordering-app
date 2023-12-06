@@ -20,9 +20,19 @@ const App = () => {
       // Set the theme class on the body
       document.body.classList.toggle('dark-theme', newTheme === 'dark');
   
+      // Set the text color of "Menu" and "Your Order"
+      document.documentElement.style.setProperty('--header-text-color', newTheme === 'light' ? '#333' : 'white');
+      
+      // Set the text color of table headers
+      document.documentElement.style.setProperty('--table-header-text-color', newTheme === 'light' ? '#333' : 'white');
+  
+      // Set the background color of buttons
+      document.documentElement.style.setProperty('--button-bg-color', newTheme === 'light' ? '#333' : '#ddd');
+  
       return newTheme;
     });
   };
+  
   
   const addToOrder = (menuItem) => {
     const existingItemIndex = order.findIndex((item) => item.id === menuItem.id);
