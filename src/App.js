@@ -86,7 +86,7 @@ const App = () => {
               <th>Item</th>
               <th>Price</th>
               <th>Qty</th>
-              <th>Remove</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
