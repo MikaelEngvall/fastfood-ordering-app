@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const MENU_ITEMS = [
@@ -14,7 +14,8 @@ const App = () => {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
-
+  
+  
   const addToOrder = (menuItem) => {
     const existingItemIndex = order.findIndex((item) => item.id === menuItem.id);
 
