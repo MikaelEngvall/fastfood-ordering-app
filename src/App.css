@@ -1,5 +1,11 @@
 body {
   font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+  background-color: #333;
+  color: white;
 }
 
 .app {
@@ -9,7 +15,7 @@ body {
 
 header {
   background-color: #333;
-  color: white;
+  color: var(--header-text-color, white); /* Set initial text color */
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -17,7 +23,7 @@ header {
 }
 
 .menu h2, .order h2 {
-  color: #333;
+  color: var(--header-text-color, #333);
 }
 
 .menu table, .order table {
@@ -33,7 +39,7 @@ header {
 }
 
 .menu th, .order th {
-  background-color: #f2f2f2;
+  color: var(--table-header-text-color, #333);
 }
 
 .menu button, .order button {
@@ -60,4 +66,10 @@ header {
 .order li button {
   background-color: #dc3545;
   color: white;
+}
+
+.app.dark {
+  /* Dark mode styles */
+  --header-text-color: white;
+  --table-header-text-color: white;
 }

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MENU_ITEMS = [
   { id: 1, name: 'Burger', price: 60 },
@@ -12,9 +13,16 @@ const App = () => {
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+    setTheme((prevTheme) => {
+      // Invert the theme when the button is clicked
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
   
+      // Set the theme class on the body
+      document.body.classList.toggle('dark-theme', newTheme === 'dark');
+  
+      return newTheme;
+    });
+  };
   
   const addToOrder = (menuItem) => {
     const existingItemIndex = order.findIndex((item) => item.id === menuItem.id);
