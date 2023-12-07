@@ -1,17 +1,6 @@
+// Menu.js
+
 import React from 'react';
-
-const MenuItemCard = ({ menuItem, addToOrder }) => {
-  const { id, name, price, image } = menuItem;
-
-  return (
-    <div className="menu-card" key={id}>
-      <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <p>{price.toFixed(2)} kr</p>
-      <button onClick={() => addToOrder(menuItem)}>Add to Order</button>
-    </div>
-  );
-};
 
 const Menu = ({ menuItems, addToOrder }) => {
   return (
@@ -19,7 +8,14 @@ const Menu = ({ menuItems, addToOrder }) => {
       <h2>Menu</h2>
       <div className="menu-cards">
         {menuItems.map((menuItem) => (
-          <MenuItemCard key={menuItem.id} menuItem={menuItem} addToOrder={addToOrder} />
+          <div key={menuItem.id} className="menu-card">
+            <img src={menuItem.image} alt={menuItem.name} />
+            <div className="menu-card-info">
+              <p>{menuItem.name}</p>
+              <p>{menuItem.price.toFixed(2)} kr</p>
+            </div>
+            <button onClick={() => addToOrder(menuItem)}>Add to Order</button>
+          </div>
         ))}
       </div>
     </section>
