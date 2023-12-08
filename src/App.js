@@ -6,8 +6,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MENU_ITEMS = [
-  { id: 1, name: 'Burger', price: 60, image: 'juicy_burger.jpg' },
-  { id: 2, name: 'Fries', price: 25, image: 'french_fries.jpg' },
+  { id: 1, name: 'Burger', price: 75, image: 'juicy_burger.jpg' },
+  { id: 2, name: 'Fries', price: 35, image: 'french_fries.jpg' },
   { id: 3, name: 'Drink', price: 20, image: 'soft_drinks.jpg' },
 ];
 
