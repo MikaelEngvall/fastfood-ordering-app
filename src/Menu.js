@@ -1,5 +1,3 @@
-// Menu.js
-
 import React from 'react';
 
 const Menu = ({ menuItems, addToOrder }) => {

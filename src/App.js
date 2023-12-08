@@ -17,28 +17,17 @@ const App = () => {
 
   const toggleTheme = () => {
     setTheme((prevTheme) => {
-      // Invert the theme when the button is clicked
       const newTheme = prevTheme === 'light' ? 'dark' : 'light';
   
-      // Set the theme class on the body
       document.body.classList.toggle('dark-theme', newTheme === 'dark');
-  
-      // Set the text color of "Menu" and "Your Order"
       document.documentElement.style.setProperty('--header-text-color', newTheme === 'light' ? '#333' : 'white');
-  
-      // Set the text color of table headers
       document.documentElement.style.setProperty('--table-header-text-color', newTheme === 'light' ? '#333' : 'white');
-  
-      // Set the background color of buttons
       document.documentElement.style.setProperty('--button-bg-color', newTheme === 'light' ? '#333' : '#ddd');
-  
-      // Set the background color of the app
       document.documentElement.style.setProperty('--app-bg-color', newTheme === 'light' ? '#9370db' : ''); 
   
       return newTheme;
     });
   };
-  
 
   const addToOrder = (menuItem) => {
     const existingItemIndex = order.findIndex((item) => item.id === menuItem.id);

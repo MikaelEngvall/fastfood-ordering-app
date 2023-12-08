@@ -11,7 +11,7 @@ body.dark-theme {
 .app {
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 15px; 
+  border-radius: 15px;
   background-color: var(--app-bg-color, #9370db); /* Light purple background */
 }
 
@@ -20,16 +20,16 @@ header {
   color: var(--header-text-color, white);
   padding: 1rem;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border-top-left-radius: 15px; 
+  border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
 header h1, .menu h2, .order h2 {
   color: white;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .menu table, .order table {
@@ -54,7 +54,7 @@ header h1, .menu h2, .order h2 {
   color: var(--button-text-color, white);
   border: none;
   cursor: pointer;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .menu button:hover, .order button:hover, .toggle-theme-button:hover {
@@ -73,7 +73,7 @@ header h1, .menu h2, .order h2 {
 .order li button {
   background-color: #8a2be2;
   color: var(--button-text-color, white);
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .app.dark {
@@ -94,14 +94,14 @@ header h1, .menu h2, .order h2 {
   padding: 10px;
   border: 1px solid #8a2be2; /* Darker purple borders for cards */
   text-align: center;
-  border-radius: 10px; 
+  border-radius: 10px;
   background-color: #a98be2; /* Lighter purple background for cards */
 }
 
 .menu-card img {
   max-width: 100%;
   height: auto;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .menu-card button {
@@ -111,7 +111,7 @@ header h1, .menu h2, .order h2 {
   color: var(--button-text-color, white);
   border: none;
   cursor: pointer;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .menu-card.dark button {
@@ -148,26 +148,28 @@ header h1, .menu h2, .order h2 {
 }
 
 .menu-card-info {
-  margin-bottom: auto; 
+  margin-bottom: auto;
 }
 .menu-card button {
-  margin-top: auto; 
+  margin-top: 10px;
   padding: 5px 10px;
-  background-color: var(--button-bg-color, #333);
+  background-color: var(--button-bg-color, #a98be2); /* Light purple background for buttons in light mode */
   color: var(--button-text-color, white);
   border: none;
   cursor: pointer;
-}
-
-.menu-card.dark button {
-  color: var(--button-text-color, black);
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Add transition for smooth color change */
 }
 
 .menu-card button:hover {
-  background-color: var(--button-bg-color, '#ddd');
+  background-color: var(--button-bg-color-hover, #8a2be2); /* Purple background on hover */
+}
+
+.menu-card.dark button {
+  color: black;
 }
 
 .menu-card.dark button:hover {
-  background-color: var(--button-bg-color, '#ddd');
-  color: var(--button-text-color, black);
+  background-color: var(--button-bg-color-hover, #8a2be2);
+  color: black;
 }
