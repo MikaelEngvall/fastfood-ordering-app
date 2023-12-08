@@ -30,6 +30,7 @@ header {
 header h1, .menu h2, .order h2 {
   color: white;
   margin-bottom: 10px;
+  text-align: center; /* Center the headings */
 }
 
 .menu table, .order table {
