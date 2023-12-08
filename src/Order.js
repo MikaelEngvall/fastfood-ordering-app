@@ -3,7 +3,7 @@ import React from 'react';
 const Order = ({ order, removeItem, calculateTotal }) => {
   return (
     <section className="order">
-      <h2>Your Order</h2>
+      <h2>Your Order      <p>Total: {calculateTotal()} kr</p></h2>
       <table>
         <thead>
           <tr>
@@ -26,7 +26,6 @@ const Order = ({ order, removeItem, calculateTotal }) => {
           ))}
         </tbody>
       </table>
-      <p>Total: {calculateTotal()} kr</p>
     </section>
   );
 };
